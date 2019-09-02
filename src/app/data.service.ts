@@ -12,10 +12,10 @@ export class DataService {
   public ArtistName="";
   public TrackName="";
   public trackInfoUrl="";
+  private chartTopTrackUrl="http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=ef8ddf2b7edaf3eee6c3e7c31d0c38fd&format=json";
+  private chartTopArtistUrl="http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=ef8ddf2b7edaf3eee6c3e7c31d0c38fd&format=json";
+  private chartTopTagsUrl="http://ws.audioscrobbler.com/2.0/?method=chart.gettoptags&api_key=ef8ddf2b7edaf3eee6c3e7c31d0c38fd&format=json";
   constructor(private http:HttpClient) { }
-  // getArtistTopAlbum(): Observable<any>{
-  //   return this.http.get<any>(this.artistTopAlbumUrl);
-  // }
   getTopTrack(): Observable<any>{
     return this.http.get<any>(this.topTrackUrl);
   }
@@ -29,5 +29,15 @@ export class DataService {
   }
   getTrackInfo(): Observable<any>{
     return this.http.get<any>(this.trackInfoUrl);
+  }
+
+  getChartTopTrack():Observable<any>{
+    return this.http.get<any>(this.chartTopTrackUrl);
+  }
+  getChartTopArtist():Observable<any>{
+    return this.http.get<any>(this.chartTopArtistUrl);
+  }
+  getChartTopTags():Observable<any>{
+    return this.http.get<any>(this.chartTopTagsUrl);
   }
 }

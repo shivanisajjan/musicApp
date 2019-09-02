@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-trackinfo1',
   template: `
-    <p>
-      trackinfo1 works!
-    </p>
+    <article class="jam container">{{topTrackinfo['wiki']['summary']}}</article>
   `,
   styles: []
 })

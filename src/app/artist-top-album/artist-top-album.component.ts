@@ -36,10 +36,6 @@ export class ArtistTopAlbumComponent implements OnInit {
   public TrackName="";
   public trackInfoUrl="";
   constructor(private dataservice:DataService) { }
-  // showArtistTopAlbum() {
-  //   this.dataservice.getArtistTopAlbum()
-  //     .subscribe(data => this.artistTopAlbum1 = data.topalbums.album);
-  // }
   topTrack() {
     this.dataservice.getTopTrack()
       .subscribe(data => this.topTrack1 = data.tracks.track);
@@ -52,10 +48,8 @@ export class ArtistTopAlbumComponent implements OnInit {
     this.dataservice.getArtistName(trackName,artistName);
     this.ArtistName=artistName;
     this.TrackName=trackName;
-    //this.trackInfoUrl="http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=ef8ddf2b7edaf3eee6c3e7c31d0c38fd&artist="+this.ArtistName+"&track="+this.TrackName+"&format=json";
   }
   ngOnInit() {
-    // this.showArtistTopAlbum();
     this.topTrack();
     this.topArtist();
   }
