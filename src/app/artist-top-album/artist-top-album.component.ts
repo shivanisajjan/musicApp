@@ -8,7 +8,7 @@ import {DataService} from '../data.service';
   <h1 class="to">Top Track</h1>
     <section class="row">
       <div *ngFor="let i of topTrack1 | slice:0:30" class="col-sm-2" style="height:220px;">
-        <div routerLink="/toptrack" (click)="getArtistName(i.name,i.artist.name)" class="panel">
+        <div routerLink="/trackinfo" (click)="getArtistName(i.name,i.artist.name)" class="t1 panel">
           <img src="{{i.image[2]['#text']}}" alt="top_track">
             <p>{{i.name}}</p>
         </div>
@@ -17,7 +17,7 @@ import {DataService} from '../data.service';
     <h1>Top Artist</h1>
     <section class="row">
       <div *ngFor="let i of topArtist1 | slice:0:30" class="col-sm-2" style="height:220px;">
-        <div class="panel">
+        <div class="t1 panel">
           <img src="{{i.image[2]['#text']}}" alt="top_artist">
             <p>{{i.name}}</p>
         </div>
@@ -32,11 +32,14 @@ export class ArtistTopAlbumComponent implements OnInit {
   public artistTopAlbum1=[];
   public topTrack1=[];
   public topArtist1=[];
+  public ArtistName="";
+  public TrackName="";
+  public trackInfoUrl="";
   constructor(private dataservice:DataService) { }
-  showArtistTopAlbum() {
-    this.dataservice.getArtistTopAlbum()
-      .subscribe(data => this.artistTopAlbum1 = data.topalbums.album);
-  }
+  // showArtistTopAlbum() {
+  //   this.dataservice.getArtistTopAlbum()
+  //     .subscribe(data => this.artistTopAlbum1 = data.topalbums.album);
+  // }
   topTrack() {
     this.dataservice.getTopTrack()
       .subscribe(data => this.topTrack1 = data.tracks.track);
@@ -46,11 +49,13 @@ export class ArtistTopAlbumComponent implements OnInit {
       .subscribe(data => this.topArtist1 = data.topartists.artist);
   }
   getArtistName(trackName,artistName){
-    console.log(trackName);
+    this.dataservice.getArtistName(trackName,artistName);
+    this.ArtistName=artistName;
+    this.TrackName=trackName;
+    //this.trackInfoUrl="http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=ef8ddf2b7edaf3eee6c3e7c31d0c38fd&artist="+this.ArtistName+"&track="+this.TrackName+"&format=json";
   }
-
   ngOnInit() {
-    this.showArtistTopAlbum();
+    // this.showArtistTopAlbum();
     this.topTrack();
     this.topArtist();
   }

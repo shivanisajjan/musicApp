@@ -5,6 +5,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TrackinfoComponent } from './trackinfo/trackinfo.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'chart',component: ChartsComponent},
   {path:'events',component: EventsComponent},
   {path:'profile',component: ProfileComponent},
+  {path:'trackinfo',component: TrackinfoComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 
@@ -23,4 +25,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents=[ArtistTopAlbumComponent,ChartsComponent,
                                 EventsComponent,ProfileComponent,
-                                PagenotfoundComponent]
+                                PagenotfoundComponent,TrackinfoComponent]

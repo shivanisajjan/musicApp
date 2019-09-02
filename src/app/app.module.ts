@@ -7,6 +7,8 @@ import { DataService } from './data.service';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TrackinfoComponent } from './trackinfo/trackinfo.component';
+import { Trackinfo1Component } from './trackinfo1/trackinfo1.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     routingComponents,
     EventsComponent,
     ProfileComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    TrackinfoComponent,
+    Trackinfo1Component
   ],
   imports: [
     BrowserModule,

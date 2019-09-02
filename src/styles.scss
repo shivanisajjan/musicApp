@@ -1,6 +1,39 @@
 body{
-  font-family: italic;
+   line-height: 1.5;
+   font-family: Lato,sans-serif;
+   color: black;
 }
 .to{
     padding-top: 100px;
-  }
+}
+.t1 img{
+  width: 100%;
+}
+.to1 img{
+  float: left;
+  width: 60%;
+  height: 400px;
+}
+.to2{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.to1 h4{
+ display: flex;
+ justify-content: center;
+}
+.to3{
+  padding-top: 8%;
+}
+h1{
+  color: #02075d;
+  text-transform: uppercase;
+}
+.jam{
+  font-size: 17px;
+}
+.b1{
+  background-color: white;
+  float: right;
+  color:#02075d;
+}
