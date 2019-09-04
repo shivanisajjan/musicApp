@@ -7,11 +7,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TrackinfoComponent } from './trackinfo/trackinfo.component';
 import { Trackinfo1Component } from './trackinfo1/trackinfo1.component';
+import { SearchinfoComponent } from './searchinfo/searchinfo.component';
+import { ArtistlistComponent } from './artistlist/artistlist.component';
+import { ArtistdetailsComponent } from './artistdetails/artistdetails.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/music',pathMatch: 'full'},
-  {path: 'music', component: ArtistTopAlbumComponent},
+  {path: 'music', component: ArtistTopAlbumComponent,
+  children:[{path:'artistas', component:ArtistlistComponent}]
+  },
   {path:'chart',component: ChartsComponent},
   {path:'events',component: EventsComponent},
   {path:'profile',component: ProfileComponent},
@@ -22,6 +27,8 @@ const routes: Routes = [
       {path:'overview', component:Trackinfo1Component}
     ]
   },
+  {path:'search/:name',component:SearchinfoComponent},
+  {path:'artistinfo',component: ArtistdetailsComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 
@@ -33,4 +40,5 @@ export class AppRoutingModule { }
 export const routingComponents=[ArtistTopAlbumComponent,ChartsComponent,
                                 EventsComponent,ProfileComponent,
                                 PagenotfoundComponent,TrackinfoComponent,
-                                Trackinfo1Component]
+                                Trackinfo1Component,SearchinfoComponent,
+                                ArtistlistComponent,ArtistdetailsComponent]

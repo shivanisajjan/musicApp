@@ -18,7 +18,7 @@ body{
   text-align: center;
   margin-bottom: 30px;
 }
-.to1 h4{
+.to1 h4,.to1 p{
  display: flex;
  justify-content: center;
 }
@@ -56,7 +56,22 @@ h1{
   font-size: 16px;
   margin: 4px 2px;
 }
+.button2 {
+  background-color: darkgrey; 
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  width: 100%;
+  background-color: #02075d;
+  color: white;
+}
 .button5 {border-radius: 12px;}
+.button6{
+  width: 50%;
+  border-radius: 12px;
+}
 .hrtag {
   border-bottom-style: solid;
   text-align: center;

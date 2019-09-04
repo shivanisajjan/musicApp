@@ -31,9 +31,7 @@ import {  Router, ActivatedRoute } from '@angular/router';
 })
 export class TrackinfoComponent implements OnInit {
 
-  public objectKeys=Object.keys;
   public topTrackinfo={};
-  public topTrackinfo1={};
   constructor(private dataservice:DataService,private route:ActivatedRoute,private router:Router) { }
   topTrack() {
     this.dataservice.getTrackInfo()
