@@ -9,6 +9,13 @@ body{
 .t1 img{
   width: 100%;
 }
+.t1 p{
+  padding: 3%;
+}
+.icon{
+  float: right;
+  padding: 3%; 
+}
 .to1 img{
   float: left;
   width: 60%;
@@ -63,7 +70,6 @@ h1{
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
-  width: 100%;
   background-color: #02075d;
   color: white;
 }

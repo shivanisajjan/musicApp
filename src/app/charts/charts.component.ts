@@ -12,7 +12,7 @@ import {  Router, ActivatedRoute } from '@angular/router';
         <div class="col-sm-4 panel panel-default">
           <h2 class="panel-heading">Top Tracks</h2>
           <div *ngFor="let i of chartTopTrack1 ">
-            <p>{{i.name}}</p>
+            <p (click)="getArtistName(i.name,i.artist.name)">{{i.name}}</p>
           </div>
         </div>
         <div class="col-sm-4 panel panel-default">
@@ -55,6 +55,9 @@ export class ChartsComponent implements OnInit {
   } 
   Goto(){
     this.router.navigate(['/music']);
+  }
+  getArtistName(trackName,artistName){
+    this.router.navigateByUrl(`trackinfo/${trackName}/${artistName}`);
   }
   ngOnInit() {
     this.chartTopTrack();

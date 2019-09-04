@@ -9,7 +9,7 @@ import {  Router, ActivatedRoute } from '@angular/router';
   <section class="to1 container">
     <img src="{{topTrackinfo.album.image[3]['#text']}}" alt="top_track">
     <h4 class="to3"><b>Title:</b>{{topTrackinfo['album']['title']}}</h4>
-    <h4><b>Artist:</b>{{topTrackinfo['artist']['name']}}</h4>
+    <h4 (click)="artist(topTrackinfo['artist']['name'])"><b>Artist:</b>{{topTrackinfo['artist']['name']}}</h4>
     <h4><b>No.of Listeners:</b>{{topTrackinfo['listeners']}}</h4>
     <h4><b>Play Count:</b>{{topTrackinfo['playcount']}}</h4>
   </section>
@@ -32,16 +32,28 @@ import {  Router, ActivatedRoute } from '@angular/router';
 export class TrackinfoComponent implements OnInit {
 
   public topTrackinfo={};
+  public s2;
+  public s3;
   constructor(private dataservice:DataService,private route:ActivatedRoute,private router:Router) { }
   topTrack() {
-    this.dataservice.getTrackInfo()
+    this.route.params.subscribe(val=>{
+      let search=this.route.snapshot.paramMap.get('tname');
+      let search1=this.route.snapshot.paramMap.get('Aname');
+      this.s2=search;
+      this.s3=search1;
+      this.dataservice.getArtistName(this.s2,this.s3);
+      this.dataservice.getTrackInfo()
       .subscribe(data => this.topTrackinfo = data.track);
+      })
   }
   overview(){
     this.router.navigate(['./overview'],{relativeTo:this.route});
   }
   Goto(){
     this.router.navigate(['/music']);
+  }
+  artist(name:string){
+    this.router.navigateByUrl(`artistinfo/${name}`);
   }
   ngOnInit() {
    this.topTrack();

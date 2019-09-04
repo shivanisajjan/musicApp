@@ -7,9 +7,9 @@ import {  Router, ActivatedRoute } from '@angular/router';
   template: `
   <section class="row">
     <div *ngFor="let i of topArtist1 | slice:0:30" class="col-sm-2" style="height:100%;">
-      <div routerLink="/artistinfo" (click)="getArtistName(i.name)" class="t1 panel">
+      <div (click)="getArtistName(i.name)" class="t1 panel">
         <img src="{{i.image[2]['#text']}}" alt="top_artist">
-          <p>{{i.name}}</p>
+          <p>{{i.name}}<i class='far fa-bookmark icon' style='font-size:20px'></i></p>
       </div>
     </div>
   </section>
@@ -25,7 +25,7 @@ export class ArtistlistComponent implements OnInit {
       .subscribe(data => this.topArtist1 = data.topartists.artist);
   }
   getArtistName(artistName){
-    this.dataservice.getartistdetails(artistName);
+    this.router.navigateByUrl(`artistinfo/${artistName}`);
   }
   ngOnInit() {
     this.topArtist();

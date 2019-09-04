@@ -21,14 +21,14 @@ const routes: Routes = [
   {path:'events',component: EventsComponent},
   {path:'profile',component: ProfileComponent},
   {
-    path:'trackinfo',
+    path:'trackinfo/:tname/:Aname',
     component: TrackinfoComponent,
     children:[
       {path:'overview', component:Trackinfo1Component}
     ]
   },
   {path:'search/:name',component:SearchinfoComponent},
-  {path:'artistinfo',component: ArtistdetailsComponent},
+  {path:'artistinfo/:aname',component: ArtistdetailsComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 
