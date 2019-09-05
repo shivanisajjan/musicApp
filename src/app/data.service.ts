@@ -58,23 +58,25 @@ export class DataService {
   getSearchInfo1(): Observable<any>{
     return this.http.get<any>(this.trackSearchUrl);
   }
-  check(m){
-    this.getjsondata()
-    .subscribe(data => {
-      this.multipledata = data
-        let flag=1;
-        for (let i=0;i< this.multipledata.length && flag===1 ;i++) {
-          if(m['mbid']===this.multipledata[i]['mbid'])
-          {
-            flag=0;
-            alert("Present in My favorite");
-          }
-        }
-        if(flag===1){
-        this.postto(m).subscribe();
-        alert("Added successfully");}
-    }); // async call : API call    
-  }
+  // check(m){
+  //   this.getjsondata()
+  //   .subscribe(data => {
+  //     this.multipledata = data
+  //     m['id']=m['mbid'];
+  //     this.postto(m).subscribe();
+  //       let flag=1;
+  //       for (let i=0;i< this.multipledata.length && flag===1 ;i++) {
+  //         if(m['mbid']===this.multipledata[i]['mbid'])
+  //         {
+  //           flag=0;
+  //           alert("Present in My favorite");
+  //         }
+  //       }
+  //       if(flag===1){
+  //       this.postto(m).subscribe();
+  //       alert("Added successfully");}
+  //   }); // async call : API call    
+  // }
   postto(i){
     return this.http.post('http://localhost:3000/attr',i);
   }
@@ -89,10 +91,10 @@ export class DataService {
   getjsondata1(): Observable<any>{
     return this.http.get<any>(this.datajson1Url);
   }
-  removefavo(id:number):Observable<any>{
+  removefavo(id):Observable<any>{
     return this.http.delete<any>(`${'http://localhost:3000/attr'}/${id}`);
   }
-  removefavo1(id:number):Observable<any>{
+  removefavo1(id:string):Observable<any>{
     return this.http.delete<any>(`${'http://localhost:3000/attr1'}/${id}`);
   }
 }

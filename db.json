@@ -3,7 +3,7 @@
     {
       "name": "Stairway to Heaven",
       "duration": "807",
-      "listeners": "1299069",
+      "listeners": "1299127",
       "mbid": "67b5513d-0119-439f-9352-521f17d205e7",
       "url": "https://www.last.fm/music/Led+Zeppelin/_/Stairway+to+Heaven",
       "streamable": {
@@ -36,8 +36,36 @@
       "@attr": {
         "rank": "2"
       },
-      "id": 1
+      "id": "67b5513d-0119-439f-9352-521f17d205e7"
     }
   ],
-  "attr1": []
+  "attr1": [
+    {
+      "name": "Shimmy",
+      "artist": "System of a Down",
+      "url": "https://www.last.fm/music/System+of+a+Down/_/Shimmy",
+      "streamable": "FIXME",
+      "listeners": "563327",
+      "image": [
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "small"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "medium"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "large"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "extralarge"
+        }
+      ],
+      "mbid": "668b2928-dbc8-401a-9b2d-6fe546dcd441",
+      "id": "ShimmySystem of a Down"
+    }
+  ]
 }

@@ -8,13 +8,6 @@ import {  Router, ActivatedRoute } from '@angular/router';
   <div class="to container tab">                                                                                     
     <div class="table-responsive">          
      <table class="table">
-       <thead>
-         <tr>
-          <th>Track Name</th>
-          <th>Artist Name</th>
-          <th></th>
-         </tr>
-        </thead>
       <tbody *ngFor="let i of trackdata">
           <tr>
             <td (click)="getArtistName(i.name,i.artist.name)"><img src="{{i.image[0]['#text']}}" alt="top_track"> {{i.name}}</td>
@@ -54,10 +47,10 @@ export class ProfileComponent implements OnInit {
   getArtistName1(artistName){
     this.router.navigateByUrl(`artistinfo/${artistName}`);
   }
-  removefav(id:number){
+  removefav(id){
     this.dataservice.removefavo(id).subscribe((data)=>{this.ngOnInit();})
   }
-  removefav1(id:number){
+  removefav1(id){
     this.dataservice.removefavo1(id).subscribe((data)=>{this.ngOnInit();})
   }
   ngOnInit() {

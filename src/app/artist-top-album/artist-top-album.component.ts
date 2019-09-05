@@ -49,7 +49,8 @@ export class ArtistTopAlbumComponent implements OnInit {
     this.router.navigate(['artistas'], { relativeTo: this.route });
   }
   addto(i) {
-    this.dataservice.check(i); 
+    i['id']=i['mbid'];
+    this.dataservice.postto(i).subscribe(); 
   }
   ngOnInit() {
     this.topTrack();

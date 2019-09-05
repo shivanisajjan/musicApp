@@ -38,6 +38,7 @@ export class SearchinfoComponent implements OnInit{
     this.router.navigateByUrl(`trackinfo/${trackName}/${artistName}`);
   }
   addto(i){
+    i['id']=i['name']+i['artist'];
     this.dataservice.postto1(i).subscribe();
   }
   ngOnInit() {
