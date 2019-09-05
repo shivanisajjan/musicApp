@@ -9,7 +9,7 @@ import {Router,ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
   title = 'musicApp';
-  constructor(private dataservice:DataService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private router:Router) { }
   onEnter(value){
     this.router.navigateByUrl(`search/${value}`);
   }

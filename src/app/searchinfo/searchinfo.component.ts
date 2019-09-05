@@ -8,10 +8,10 @@ import {  Router, ActivatedRoute } from '@angular/router';
   <h2 class="to container">Search Results</h2>
   <div class="container">
   <section class="row container">
-    <div *ngFor="let i of searchTrackInfo11" class="col-sm-2" style="height:220px;">
-      <div routerLink="/trackinfo" (click)="getArtistName1(i.name,i.artist)" class="t1 panel">
-        <img src="{{i.image[2]['#text'] || 'assets/img/12.jpg'}}" alt="top_track">
-          <p>{{i.name}}</p>
+    <div *ngFor="let i of searchTrackInfo11" class="col-sm-3">
+      <div class="t1 panel">
+        <img (click)="getArtistName1(i.name,i.artist)" src="{{i.image[0]['#text'] || 'assets/img/12.jpg'}}" alt="top_track">
+          <p>{{i.name}}<i (click)="addto(i)" class='glyphicon glyphicon-star icon' style='font-size:120%'></i></p>
       </div>
     </div>
   </section>
@@ -35,7 +35,10 @@ export class SearchinfoComponent implements OnInit{
       })
   }
   getArtistName1(trackName,artistName){
-    this.dataservice.getArtistName(trackName,artistName);
+    this.router.navigateByUrl(`trackinfo/${trackName}/${artistName}`);
+  }
+  addto(i){
+    this.dataservice.postto1(i).subscribe();
   }
   ngOnInit() {
     this.Track();

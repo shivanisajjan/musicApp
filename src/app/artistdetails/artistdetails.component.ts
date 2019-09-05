@@ -51,6 +51,7 @@ export class ArtistdetailsComponent implements OnInit {
       .subscribe(data => this.topArtistinfo = data.artist);
       })
   }
+  
   Goto(){
     this.router.navigate(['/music/artistas']);
   }

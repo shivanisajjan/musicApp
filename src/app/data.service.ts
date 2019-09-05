@@ -19,6 +19,7 @@ export class DataService {
   public ArtistInfoUrl="";
   public s1="";
   public s11:string;
+  public multipledata=[];
   constructor(private http:HttpClient) { }
   getTopTrack(): Observable<any>{
     return this.http.get<any>(this.topTrackUrl);
@@ -56,5 +57,42 @@ export class DataService {
   }
   getSearchInfo1(): Observable<any>{
     return this.http.get<any>(this.trackSearchUrl);
+  }
+  check(m){
+    this.getjsondata()
+    .subscribe(data => {
+      this.multipledata = data
+        let flag=1;
+        for (let i=0;i< this.multipledata.length && flag===1 ;i++) {
+          if(m['mbid']===this.multipledata[i]['mbid'])
+          {
+            flag=0;
+            alert("Present in My favorite");
+          }
+        }
+        if(flag===1){
+        this.postto(m).subscribe();
+        alert("Added successfully");}
+    }); // async call : API call    
+  }
+  postto(i){
+    return this.http.post('http://localhost:3000/attr',i);
+  }
+  postto1(i){
+    return this.http.post('http://localhost:3000/attr1',i);
+  }
+  private datajsonUrl="http://localhost:3000/attr";
+  private datajson1Url="http://localhost:3000/attr1";
+  getjsondata(): Observable<any>{
+    return this.http.get<any>(this.datajsonUrl);
+  }
+  getjsondata1(): Observable<any>{
+    return this.http.get<any>(this.datajson1Url);
+  }
+  removefavo(id:number):Observable<any>{
+    return this.http.delete<any>(`${'http://localhost:3000/attr'}/${id}`);
+  }
+  removefavo1(id:number):Observable<any>{
+    return this.http.delete<any>(`${'http://localhost:3000/attr1'}/${id}`);
   }
 }

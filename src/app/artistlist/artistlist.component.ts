@@ -9,7 +9,7 @@ import {  Router, ActivatedRoute } from '@angular/router';
     <div *ngFor="let i of topArtist1 | slice:0:30" class="col-sm-2" style="height:100%;">
       <div (click)="getArtistName(i.name)" class="t1 panel">
         <img src="{{i.image[2]['#text']}}" alt="top_artist">
-          <p>{{i.name}}<i class='far fa-bookmark icon' style='font-size:20px'></i></p>
+          <p>{{i.name}}<i class='glyphicon glyphicon-star icon' style='font-size:120%'></i></p>
       </div>
     </div>
   </section>

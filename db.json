@@ -1,0 +1,43 @@
+{
+  "attr": [
+    {
+      "name": "Stairway to Heaven",
+      "duration": "807",
+      "listeners": "1299069",
+      "mbid": "67b5513d-0119-439f-9352-521f17d205e7",
+      "url": "https://www.last.fm/music/Led+Zeppelin/_/Stairway+to+Heaven",
+      "streamable": {
+        "#text": "0",
+        "fulltrack": "0"
+      },
+      "artist": {
+        "name": "Led Zeppelin",
+        "mbid": "d6e0e274-8e19-44ce-b5b2-52c12f8a674a",
+        "url": "https://www.last.fm/music/Led+Zeppelin"
+      },
+      "image": [
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "small"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "medium"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "large"
+        },
+        {
+          "#text": "https://lastfm-img2.akamaized.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+          "size": "extralarge"
+        }
+      ],
+      "@attr": {
+        "rank": "2"
+      },
+      "id": 1
+    }
+  ],
+  "attr1": []
+}
